@@ -1,0 +1,1402 @@
+:root {
+  font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0a0a0a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  direction: rtl;
+  text-align: right;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  color: #e2e8f0;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Custom CSS Variables for Dark Theme */
+:root {
+  --primary-color: #3b82f6;
+  --primary-hover: #2563eb;
+  --secondary-color: #64748b;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --info-color: #06b6d4;
+  --light-color: #1e293b;
+  --dark-color: #0f172a;
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
+  --text-muted: #cbd5e1;
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --border-color: #334155;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* RTL Support */
+[dir="rtl"] .me-2 {
+  margin-right: 0 !important;
+  margin-left: 0.5rem !important;
+}
+
+[dir="rtl"] .ms-auto {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* Custom Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0,0,0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5), 0 0 10px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.5);
+  }
+}
+
+/* Custom Classes */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
+}
+
+.bg-gradient-success {
+  background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+}
+
+.bg-gradient-danger {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-rotate {
+  animation: rotate 2s linear infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1s ease-in-out;
+}
+
+.animate-neon-pulse {
+  animation: neonPulse 2s ease-in-out infinite;
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #334155 25%, #475569 50%, #334155 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ATM Specific Styles */
+.atm-logo {
+  transition: transform 0.3s ease;
+}
+
+.atm-logo:hover {
+  transform: scale(1.1);
+}
+
+/* Advanced Card Styles */
+.card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px var(--shadow-color), 0 0 20px rgba(59, 130, 246, 0.3) !important;
+  border-color: var(--primary-color);
+}
+
+.card.glass {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card.glass:hover {
+  background: rgba(30, 41, 59, 0.9);
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Advanced Button Styles */
+.btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  text-transform: none;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px var(--shadow-color), 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+.btn:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--primary-hover), #1d4ed8);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--success-color), #059669);
+  color: white;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--danger-color), #dc2626);
+  color: white;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, var(--warning-color), #d97706);
+  color: white;
+}
+
+.btn-warning:hover {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+}
+
+.btn-info {
+  background: linear-gradient(135deg, var(--info-color), #0891b2);
+  color: white;
+}
+
+.btn-info:hover {
+  background: linear-gradient(135deg, #0891b2, #0e7490);
+  box-shadow: 0 10px 25px rgba(6, 182, 212, 0.4);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--secondary-color), #475569);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #475569, #374151);
+  box-shadow: 0 10px 25px rgba(100, 116, 139, 0.4);
+}
+
+.btn-outline-secondary {
+  background: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.btn-outline-secondary:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--primary-color);
+  color: var(--text-primary);
+  box-shadow: 0 10px 25px rgba(100, 116, 139, 0.4);
+}
+
+.btn-outline-light {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+
+.btn-light {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  color: var(--bg-primary);
+}
+
+.btn-light:hover {
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+  color: var(--bg-primary);
+  box-shadow: 0 10px 25px rgba(248, 250, 252, 0.4);
+}
+
+/* Form Controls */
+.form-control {
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+  background: #ffffff !important;
+  color: #000000 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  font-weight: 500;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25), 0 0 15px rgba(59, 130, 246, 0.3);
+  transform: scale(1.02);
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Ensure form controls are always visible */
+.form-control,
+.form-control:hover,
+.form-control:focus,
+.form-control:active {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-color: var(--border-color);
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+}
+
+.form-control::placeholder {
+  color: var(--text-muted);
+}
+
+/* Navbar Styles */
+.navbar {
+  background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary)) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Table Styles */
+.table {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table thead th {
+  background: var(--bg-tertiary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.table tbody tr {
+  background: var(--bg-secondary);
+  transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+  background: var(--bg-tertiary);
+  transform: scale(1.01);
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+/* Badge Styles */
+.badge {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  transform: scale(1.1);
+}
+
+/* Toast Customization */
+.Toastify__toast {
+  border-radius: 12px;
+  font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+}
+
+.Toastify__toast--success {
+  background: linear-gradient(135deg, var(--success-color), #059669);
+}
+
+.Toastify__toast--error {
+  background: linear-gradient(135deg, var(--danger-color), #dc2626);
+}
+
+.Toastify__toast--warning {
+  background: linear-gradient(135deg, var(--warning-color), #d97706);
+}
+
+.Toastify__toast--info {
+  background: linear-gradient(135deg, var(--info-color), #0891b2);
+}
+
+/* Nav Tabs */
+.nav-tabs {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-tabs .nav-link {
+  color: var(--text-secondary);
+  border: none;
+  border-radius: 12px 12px 0 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-tabs .nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.nav-tabs .nav-link:hover::before {
+  left: 100%;
+}
+
+.nav-tabs .nav-link:hover {
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
+  transform: translateY(-2px);
+}
+
+.nav-tabs .nav-link.active {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+  color: white;
+  border: none;
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* Loading States */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--primary-hover), #1d4ed8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .card-body {
+    padding: 1.5rem !important;
+  }
+  
+  .btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Glassmorphism Effect */
+.glass {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Neon Effects */
+.neon-border {
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+.neon-text {
+  color: var(--primary-color);
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 35px var(--shadow-color), 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Icon Styles */
+.icon-glow {
+  filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.5));
+  transition: all 0.3s ease;
+}
+
+.icon-glow:hover {
+  filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.8));
+  transform: scale(1.1);
+}
+
+/* Advanced Card Animations */
+.card.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.card.animate-glow {
+  animation: neonPulse 2s ease-in-out infinite;
+}
+
+/* Button Animations */
+.btn.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+.btn.animate-bounce {
+  animation: bounce 1s ease-in-out;
+}
+
+/* Special Effects */
+.spinner-border {
+  border-color: var(--primary-color);
+  border-right-color: transparent;
+}
+
+/* Override Bootstrap Light Classes */
+.bg-light {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+}
+
+.text-muted {
+  color: var(--text-secondary) !important;
+}
+
+/* Advanced Form Styling */
+.input-group {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.input-group .btn {
+  border-radius: 0 12px 12px 0;
+}
+
+/* Advanced Select Styling */
+select.form-control {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+/* Advanced Link Styling */
+a {
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-hover);
+  text-decoration: none;
+}
+
+/* Advanced List Styling */
+.list-unstyled li {
+  transition: all 0.3s ease;
+  padding: 0.25rem 0;
+}
+
+.list-unstyled li:hover {
+  transform: translateX(-5px);
+  color: var(--primary-color);
+}
+
+/* Advanced Spinner */
+.spinner-border {
+  animation: rotate 1s linear infinite;
+}
+
+/* Advanced Loading States */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn:disabled:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Advanced Focus States */
+.btn:focus,
+.form-control:focus,
+.nav-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25), 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+/* Advanced Active States */
+.btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Advanced Disabled States */
+.btn:disabled,
+.form-control:disabled {
+  background-color: var(--bg-tertiary) !important;
+  color: var(--text-muted) !important;
+  cursor: not-allowed;
+}
+
+/* Advanced Hover States for All Interactive Elements */
+.card:hover,
+.btn:hover,
+.nav-link:hover,
+.table tbody tr:hover {
+  cursor: pointer;
+}
+
+/* Advanced Selection */
+::selection {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Advanced Placeholder */
+::placeholder {
+  color: var(--text-muted);
+  opacity: 1;
+}
+
+/* Advanced Focus Ring */
+*:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Advanced Transitions */
+* {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Advanced Shadows */
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+.shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Global Text Color Overrides */
+* {
+  color: var(--text-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+}
+
+p, span, div, label {
+  color: var(--text-primary) !important;
+}
+
+.text-muted {
+  color: var(--text-secondary) !important;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+/* Card Text Colors */
+.card {
+  color: var(--text-primary) !important;
+}
+
+.card-body {
+  color: var(--text-primary) !important;
+}
+
+.card-title {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+}
+
+.card-text {
+  color: var(--text-secondary) !important;
+}
+
+/* Form Labels and Text */
+label {
+  color: var(--text-primary) !important;
+  font-weight: 500;
+}
+
+.form-label {
+  color: var(--text-primary) !important;
+  font-weight: 500;
+}
+
+.form-text {
+  color: var(--text-secondary) !important;
+}
+
+/* Table Text Colors */
+.table {
+  color: var(--text-primary) !important;
+}
+
+.table th {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+}
+
+.table td {
+  color: var(--text-secondary) !important;
+}
+
+/* List Text Colors */
+.list-group-item {
+  color: var(--text-primary) !important;
+  background: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.list-unstyled li {
+  color: var(--text-primary) !important;
+}
+
+/* Navbar Text */
+.navbar-nav .nav-link {
+  color: var(--text-primary) !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Override Bootstrap Light Background */
+.bg-light {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Glass Effect Text */
+.glass {
+  color: var(--text-primary) !important;
+}
+
+.glass * {
+  color: var(--text-primary) !important;
+}
+
+/* Specific Component Text Colors */
+.account-info {
+  color: var(--text-primary) !important;
+}
+
+.balance-amount {
+  color: var(--text-primary) !important;
+  font-weight: 700;
+}
+
+.service-title {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+}
+
+.service-description {
+  color: var(--text-secondary) !important;
+}
+
+/* Transaction History Text */
+.transaction-item {
+  color: var(--text-primary) !important;
+}
+
+.transaction-amount {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+}
+
+.transaction-date {
+  color: var(--text-secondary) !important;
+}
+
+/* ATM Screen Text */
+.atm-screen {
+  color: var(--text-primary) !important;
+}
+
+.atm-screen * {
+  color: var(--text-primary) !important;
+}
+
+/* Login/Create Account Form Text */
+.auth-form {
+  color: var(--text-primary) !important;
+}
+
+.auth-form * {
+  color: var(--text-primary) !important;
+}
+
+/* Dashboard Stats Text */
+.stat-value {
+  color: var(--text-primary) !important;
+  font-weight: 700;
+}
+
+.stat-label {
+  color: var(--text-secondary) !important;
+}
+
+/* Override any white text on dark backgrounds */
+.card-body h5,
+.card-body h6,
+.card-body p,
+.card-body span,
+.card-body div {
+  color: var(--text-primary) !important;
+}
+
+/* Ensure all text in glass cards is visible */
+.glass .card-title,
+.glass .card-text,
+.glass label,
+.glass p,
+.glass span,
+.glass div {
+  color: var(--text-primary) !important;
+}
+
+/* Additional text visibility improvements */
+.text-dark {
+  color: #000000 !important;
+}
+
+.text-light {
+  color: #ffffff !important;
+}
+
+/* Override any Bootstrap text colors that might be too light */
+.text-body {
+  color: var(--text-primary) !important;
+}
+
+/* Ensure form placeholders are visible */
+.form-control::placeholder {
+  color: #666666 !important;
+  opacity: 0.8;
+}
+
+/* Improve contrast for small text */
+small, .small {
+  color: var(--text-secondary) !important;
+}
+
+/* Ensure all headings are visible */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Improve list item visibility */
+.list-group-item {
+  color: var(--text-primary) !important;
+}
+
+.list-group-item * {
+  color: var(--text-primary) !important;
+}
+
+/* Ensure navigation text is visible */
+.nav-link {
+  color: var(--text-primary) !important;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Improve table text visibility */
+.table {
+  color: var(--text-primary) !important;
+}
+
+.table th,
+.table td {
+  color: var(--text-primary) !important;
+}
+
+/* Ensure all button text is visible */
+.btn {
+  color: var(--text-primary) !important;
+}
+
+.btn-primary {
+  color: white !important;
+}
+
+.btn-success {
+  color: white !important;
+}
+
+.btn-danger {
+  color: white !important;
+}
+
+.btn-warning {
+  color: white !important;
+}
+
+.btn-info {
+  color: white !important;
+}
+
+.btn-secondary {
+  color: white !important;
+}
+
+/* Improve card header text */
+.card-header {
+  color: var(--text-primary) !important;
+}
+
+.card-header * {
+  color: var(--text-primary) !important;
+}
+
+/* Ensure modal text is visible */
+.modal-title,
+.modal-body {
+  color: var(--text-primary) !important;
+}
+
+.modal-body * {
+  color: var(--text-primary) !important;
+}
+
+/* Improve alert text visibility */
+.alert {
+  color: var(--text-primary) !important;
+}
+
+.alert * {
+  color: var(--text-primary) !important;
+}
+
+/* Ensure dropdown text is visible */
+.dropdown-menu {
+  background: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dropdown-item {
+  color: var(--text-primary) !important;
+}
+
+.dropdown-item:hover {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Improve tooltip text */
+.tooltip-inner {
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Ensure popover text is visible */
+.popover {
+  background: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.popover-header {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+}
+
+.popover-body {
+  color: var(--text-primary) !important;
+}
+
+/* Force all text to be visible with high contrast */
+* {
+  color: var(--text-primary) !important;
+}
+
+/* Specific text color classes for better visibility */
+.text-dark-on-light {
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
+
+.text-white-on-dark {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* Exception for specific elements that should have different colors */
+.text-primary,
+.text-success,
+.text-danger,
+.text-warning,
+.text-info {
+  color: inherit !important;
+}
+
+/* Ensure input text is visible */
+input, textarea, select {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* Override for dark inputs */
+input[type="password"], 
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+input[type="number"] {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* Ensure form controls have proper contrast */
+.form-control {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+.form-control:focus {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* Improve focus states */
+.form-control:focus {
+  color: var(--text-primary) !important;
+}
+
+/* Ensure all spans and divs have proper text color */
+span, div {
+  color: var(--text-primary) !important;
+}
+
+/* Override any Bootstrap utilities that might interfere */
+.text-white {
+  color: #ffffff !important;
+}
+
+.text-black {
+  color: #000000 !important;
+}
+
+/* Additional input text visibility fixes */
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="number"]::placeholder {
+  color: #666666 !important;
+}
+
+/* Force input text to be black */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+input[type="url"] {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* Ensure textarea text is visible */
+textarea {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* Ensure select text is visible */
+select {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* Override any global text color for inputs */
+input * {
+  color: #000000 !important;
+}
+
+/* Ensure autofill doesn't change text color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #000000 !important;
+  -webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
+  background-color: #ffffff !important;
+}
+
+/* Force all form inputs to have proper styling */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+input[type="url"],
+.form-control,
+.form-control-lg {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid var(--border-color) !important;
+  border-radius: 12px !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Hover state for form inputs */
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+input[type="number"]:hover,
+input[type="search"]:hover,
+input[type="url"]:hover,
+.form-control:hover,
+.form-control-lg:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Focus state for form inputs */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus,
+.form-control:focus,
+.form-control-lg:focus {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25), 0 0 15px rgba(59, 130, 246, 0.3) !important;
+  transform: scale(1.02) !important;
+  outline: none !important;
+}
+
+/* Active state for form inputs */
+input[type="text"]:active,
+input[type="password"]:active,
+input[type="email"]:active,
+input[type="tel"]:active,
+input[type="number"]:active,
+input[type="search"]:active,
+input[type="url"]:active,
+.form-control:active,
+.form-control-lg:active {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* Ensure input groups work properly */
+.input-group .form-control {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.input-group .form-control:focus {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Override any Bootstrap default styles */
+.form-control:not(:focus) {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Card number display styling */
+.card-number-display {
+  font-family: 'Courier New', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #1e293b, #334155);
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.card-holder-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1e293b, #334155);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 2px solid var(--success-color);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+/* Enhanced form styling */
+.enhanced-form-control {
+  background: linear-gradient(135deg, #ffffff, #f8fafc) !important;
+  border: 2px solid var(--border-color) !important;
+  border-radius: 12px !important;
+  color: #000000 !important;
+  font-weight: 500 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.enhanced-form-control:hover {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2) !important;
+  transform: translateY(-2px) !important;
+}
+
+.enhanced-form-control:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25), 0 8px 25px rgba(59, 130, 246, 0.3) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+  background: #ffffff !important;
+}

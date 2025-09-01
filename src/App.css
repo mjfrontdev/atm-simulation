@@ -1,0 +1,217 @@
+.App {
+  text-align: center;
+  direction: rtl;
+  font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+}
+
+/* Custom ATM Styles */
+.atm-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.atm-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.atm-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Keypad Styles */
+.keypad-button {
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+  transition: all 0.2s ease;
+}
+
+.keypad-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 6px #bebebe, -3px -3px 6px #ffffff;
+}
+
+.keypad-button:active {
+  transform: translateY(0);
+  box-shadow: inset 2px 2px 4px #bebebe, inset -2px -2px 4px #ffffff;
+}
+
+/* Form Styles */
+.form-control {
+  border: 2px solid #e9ecef;
+  border-radius: 15px;
+  padding: 15px 20px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+  transform: scale(1.02);
+}
+
+/* Button Styles */
+.btn-custom {
+  background: linear-gradient(145deg, #0d6efd, #0b5ed7);
+  border: none;
+  border-radius: 15px;
+  padding: 15px 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background: linear-gradient(145deg, #0b5ed7, #0a58ca);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.3);
+}
+
+.btn-custom:active {
+  transform: translateY(-1px);
+}
+
+/* Card Styles */
+.balance-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+}
+
+.transaction-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.transaction-card:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.bounce-in {
+  animation: bounceIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .atm-container {
+    padding: 10px;
+  }
+  
+  .atm-card {
+    margin: 10px;
+  }
+  
+  .keypad-button {
+    padding: 20px;
+    font-size: 18px;
+  }
+  
+  .form-control {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+}
+
+/* Loading Animation */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Success Animation */
+.success-checkmark {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #28a745;
+  position: relative;
+}
+
+.success-checkmark::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 4px;
+  width: 8px;
+  height: 4px;
+  border: 2px solid white;
+  border-top: none;
+  border-right: none;
+  transform: rotate(-45deg);
+}
